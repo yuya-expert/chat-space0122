@@ -1,0 +1,22 @@
+.wrapper
+  = render "devise/shared/side_bar"
+  .chat-main
+    .chat-main__header
+      .chat-main__header--group
+        .chat-main__header--group--name
+          TECKEXPERT
+        .chat-main__header--group-edit-btn
+          = link_to 'EDIT', '#'
+        .chat-main__header-members
+          MEMBER:araki
+    .chat-main__body
+    .chat-main__footer
+      .chat-main__footer--form
+        %form{:action => "#", }
+          %input{:placeholder=>"type a message",type: "text", :name => "#", :size => "80%"}
+            = link_to '#' do
+              = fa_icon 'image'
+            = link_to '#' do
+              .chat-main__footer--submit
+                .chat-main__footer--submit--name
+                  SEND
