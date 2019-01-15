@@ -1,12 +1,7 @@
 $(function(){
    // ここの中身だけを更新するようにできる
   function buildHTML(message){
-
-    if(message.image != null){
-      var img = `<img src="${message.image}">`
-    }else{
-      var img = ``
-    }
+    message.image == null ? img = `` : img = `<img src="${message.image}">`
 
     var html =
       `<div class = "chat-main__body--messages-list">
@@ -19,7 +14,7 @@ $(function(){
         </div>
         <div class = "chat-main__message--body">
           ${message.content}
-        ${img};
+          ${img}
         </div>
       </div>`;
     return html;
@@ -27,10 +22,8 @@ $(function(){
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    // console.log(this)
     var formData = new FormData(this);
-    var href = window.location.href
-    // console.log(href)
+    var href = location.href
     $.ajax({
       url: href,
       type: 'POST',
@@ -41,7 +34,6 @@ $(function(){
     })
     // うまくいった時はdoneが送信される
     .done(function(data){
-       console.log(data)
       var html = buildHTML(data);
       $('input').prop('disabled', false);
       // 指定したクラスに対して、要素を追加していく
@@ -56,3 +48,4 @@ $(function(){
     })
   })
 });
+
