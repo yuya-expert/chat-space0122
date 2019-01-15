@@ -1,0 +1,23 @@
+.wrapper
+  = render "devise/shared/side_bar"
+  .chat-main
+    .chat-main__header
+      .chat-main__header--group
+        .chat-main__header--group--name
+          TECKEXPERT
+        .chat-main__header--group-edit-btn
+          = link_to "EDIT", { :controller => "messages", :action => "index" }, { :class => "chat-main__header--group-edit-btn--name" }
+        .chat-main__header-members
+          MEMBER:
+          = @users.pluck(:name).join(",")
+
+    .chat-main__body
+      = render @messages
+    .chat-main__footer
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
