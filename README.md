@@ -8,7 +8,8 @@
 
 ### Association
 - has_many :messages
-- has_many :users
+- has_many :members
+- has_many :users ,through: :members
 
 ## usersテーブル
 
@@ -16,16 +17,18 @@
 |------|----|-------|
 |name|string|null: false|
 |email|text|null: false|
+|password|string|null: false|
 
 ### Association
-- has_many :groups
 - has_many :messages
+- has_many :members
+- has_many :groups ,through: :members
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|comment|text|null: false|
+|body|text|null: true|
 |image|string|null: true|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
