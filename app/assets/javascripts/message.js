@@ -1,7 +1,7 @@
 $(function(){
    // ここの中身だけを更新するようにできる
   function buildHTML(message){
-    message.image == null ? img = `` : img = `<img src="${message.image}">`
+    var imgHTML = message.image ? `<img src="${message.image}">`: ``;
 
     var html =
       `<div class = "chat-main__body--messages-list">
@@ -13,8 +13,8 @@ $(function(){
           ${message.created_at}
         </div>
         <div class = "chat-main__message--body">
-          ${message.content}
-          ${img}
+          <p>${message.content}</p>
+          <p>${imgHTML}</p>
         </div>
       </div>`;
     return html;
@@ -39,6 +39,7 @@ $(function(){
       // 指定したクラスに対して、要素を追加していく
       $('.chat-main__body').append(html)
       $('.form__message').val('')
+      $(message_image).val('')
       $(".chat-main__body").animate({scrollTop:100000});
     })
     // うまくいかなかった時はfailが送信される。
