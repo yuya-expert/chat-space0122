@@ -6,7 +6,7 @@
         .chat-main__header--group--name
           TECKEXPERT
         .chat-main__header--group-edit-btn
-          = link_to 'EDIT', '#'
+          = link_to "EDIT", { :controller => "messages", :action => "index" }, { :class => "chat-main__header--group-edit-btn--name" }
         .chat-main__header-members
           MEMBER:
           = @users.pluck(:name).join(",")

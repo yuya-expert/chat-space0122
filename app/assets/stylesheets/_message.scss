@@ -3,6 +3,7 @@
     height: 100vh;
     width: 300px;
     float: left;
+    text-decoration: none;
 
       &__user {
         height: 15%;
@@ -35,57 +36,46 @@
  }
 }
 
-  .chat-side__groups{
-    height: 85%;
-    width:100%;
-    background-color:#253141;
-      &--list{
-        height: 100%;
-        color: #fff;
-        .chat-side__group{
-          padding: 30px 50px 30px 20px;
-          display:block;
+.chat-side__groups{
+  height: 85%;
+  width:100%;
+  background-color:#253141;
+    &--list{
+      height: 100%;
+      color: #fff;
+}
 
-        &--name{
-          color: #fff;
-          font-size: 15px;
-    }
+.chat-side__group{
+  padding: 15px 50px 15px 20px;
+  display:block;
+  color: white;
+  text-decoration: none;
 
-        &--message{
-          color: #fff;
-          font-size: 11px;
+&--name{
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+&--message{
+  color: #fff;
+  font-size: 11px;
    }
   }
  }
+
+.fa-pencil-square-o{
+  color: white;
 }
 
+.fa-cog{
+  color: white;
+}
 
 
 .chat-side__group:hover {
   background-color: #2e3d51;
 }
-
-  a{
-    text-decoration: none;
-    color: white;
-  }
-
-  p{
-    color: #fff;
-  }
-
-  div{
-    display: block;
-  }
-
-input,textarea,select{
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  width: 75%;
-
-}
-
 
 .chat-main{
 height: 100vh;
@@ -111,13 +101,18 @@ float: left;
 }
 
   .chat-main__header--group-edit-btn{
-        color: black;
+    color: black;
     font-size: 15px;
     padding: 12.5px 20px;
     margin: 28px 20px 0;
-    background-color: #38AEF0;
+    background-color: white;
     border: 1px solid #38AEF0;
-    float: right
+    float: right;
+  }
+  .chat-main__header--group-edit-btn--name{
+    color: black;
+    text-decoration: none;
+
   }
 
     .chat-main__header-members{

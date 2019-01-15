@@ -13,12 +13,11 @@
       .chat-side__groups--list
         - current_user.groups.each do |group|
           .chat-side__group
-            = link_to group_messages_path(group) do
+            = link_to group_messages_path(group), { :class => "chat-side__group" } do
               .chat-side__group--name
                 = group.name
               .chat-side__group--message
                 = group.show_last_message
-
 / .chat-side
 /   .chat-side__user
 /     = current_user.name
