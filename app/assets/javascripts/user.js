@@ -9,8 +9,8 @@ $(document).on('turbolinks:load', function() {
     search_list.append(html);
   };
   // 配列が空の場合は何も呼び出さない
-  function appendNoUser(user) {
-    var html = ``
+  function appendNotMatch(message) {
+    var html = "一致するユーザーはいません"
     search_list.append(html);
   };
   // htmlを作成する
@@ -40,7 +40,7 @@ $(document).on('turbolinks:load', function() {
           appendUser(user);
         });
       } else {
-        appendNoUser("一致するユーザーはいません")
+        appendNotMatch(message)
       }
     })
     // 失敗時の処理
