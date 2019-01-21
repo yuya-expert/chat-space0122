@@ -4,9 +4,9 @@
     .chat-main__header
       .chat-main__header--group
         .chat-main__header--group--name
-          =current_user.name
+          = current_user.name
         .chat-main__header--group-edit-btn
-          = link_to "EDIT", edit_group_path(@group.id), { :class => "chat-main__header--group-edit-btn--name" }
+          = link_to "EDIT", edit_group_path(@group.id), class: "chat-main__header--group-edit-btn--name"
         .chat-main__header-members
           MEMBER:
           = @users.pluck(:name).join(",")
