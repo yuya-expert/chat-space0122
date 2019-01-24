@@ -42,7 +42,6 @@ $(function(){
       $('.form__message').val('')
       $(message_image).val('')
       $(".chat-main__body").animate({scrollTop:100000});
-      console.log('1')
     })
     // うまくいかなかった時はfailが送信される。
     .fail(function(){
@@ -66,15 +65,12 @@ $(function(){
       })
       // うまくいった時はdoneが送信される
       .done(function(data){
-        console.log(data)
-        console.log(data.length)
         if (data.length != 0){
         data.forEach(function(message) {
         var html = buildHTML(message);
         // 指定したクラスに対して、要素を追加していく
         $('.chat-main__body').append(html)
         $('.chat-main__body').animate({scrollTop:100000});
-        console.log('2')
       });
       }
     })
